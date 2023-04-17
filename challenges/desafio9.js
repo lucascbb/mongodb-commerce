@@ -1,1 +1,3 @@
-db.produtos.find({ calorias: { $lt: 500 } }, { _id: false, nome: true });
+db.produtos.find({ valoresNutricionais: 
+  { $elemMatch: { tipo: "calorias", quantidade: { $lt: 500 } } } }, 
+  { nome: true, _id: false });
